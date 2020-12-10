@@ -32,8 +32,20 @@ function App() {
     return `${day},${date} ${month}, ${year}`
   }
 
+  const setClassName = () =>{
+    if(typeof weather.main=="undefined")
+      return "app";
+    if(weather.main.temp<10)
+      return "app cold";
+    if(weather.main.temp>10 && weather.main.temp<20)
+      return "app lcold";
+    if(weather.main.temp>20 && weather.main.temp<30)
+      return "app medium";
+    else return "app warm";
+  }
+
   return (
-    <div className="app">
+    <div className={setClassName()}>
       <main>
         <div className="search-bar">
           <input className="search-box" type="text" placeholder="Search city ..."

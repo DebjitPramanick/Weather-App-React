@@ -17,18 +17,30 @@ main{
 }
 
 .search-bar{
+  max-width: 600px;
   margin: auto;
-  padding-top: 40px;
+  padding: 40px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.search-btn{
+  background-color: rgb(199, 229, 255);
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  padding: 16px 22px;
+  border-radius: 0 6px 6px 0;
 }
 .search-box{
   display: block;
   padding: 16px;
-  font-size: 16px;
-  border-radius: 6px;
+  font-size: 18px;
+  border-radius: 6px 0 0 6px;
   width: 80%;
-  margin: auto;
   outline: 0;
   border: 0;
+  background-color: rgb(199, 229, 255);
 }
 
 .app.cold{background-image: url('./assets/cold.jpg');}
@@ -37,12 +49,11 @@ main{
 
 
 .location-box{
-  width: 80%;
+  max-width: 600px;
   margin: auto;
   background: rgba(0, 0, 0, 0.404);
   color: white;
   text-align: center;
-  margin-top: 200px;
   padding: 40px 0;
   border-radius: 6px;
 }
@@ -63,9 +74,23 @@ main{
   margin: auto;
   background: rgb(206, 134, 0);
   font-size: 16px;
-  padding: 4px;
+  padding: 10px;
   border-radius: 40px;
   font-weight: 600;
+}
+
+.other-dets{
+  margin-top: 60px;
+  max-width: 80%;
+  margin: 60px auto;
+  padding: 40px;
+  border: white 1px solid;
+  border-radius: 6px;
+  text-align: left;
+}
+.others{
+  margin-top: 18px;
+  font-weight: lighter;
 }
 
 .type.cold{background: rgb(0, 119, 255);}

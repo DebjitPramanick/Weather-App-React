@@ -40,6 +40,7 @@ function App() {
           onChange={e=>setQuery(e.target.value)} value={query}
           onKeyPress={search}>
           </input>
+          <img className="search-btn" src="https://img.icons8.com/ios-filled/50/000000/search--v2.png" alt=""/>
         </div>
 
         {(typeof weather.main != "undefined")?(
@@ -49,6 +50,12 @@ function App() {
               <p className="date">{dateBuilder(new Date())}</p>
               <div className="temp">{weather.main.temp}°C</div>
               <p className="type">{weather.weather[0].main}</p>
+              <div className="other-dets">
+                <h4>Other details :</h4>
+                <p className="others">Pressure: {weather.main.pressure}</p>
+                <p className="others">Humidity: {weather.main.humidity}</p>
+                <p className="others">Wind speed: {weather.wind.speed}</p>
+              </div>
             </div>
           </div>
         ):('')}

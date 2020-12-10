@@ -32,27 +32,33 @@ function App() {
     return `${day},${date} ${month}, ${year}`
   }
 
-  const setClassName = () =>{
-    if(typeof weather.main=="undefined")
-      return "app";
-    if(weather.main.temp<10)
-      return "app cold";
-    if(weather.main.temp>10 && weather.main.temp<20)
-      return "app lcold";
-    if(weather.main.temp>20 && weather.main.temp<30)
-      return "app medium";
+  const setBG = () =>{
+    if(typeof weather.main=="undefined") return "app";
+    if(weather.main.temp<=15) return "app cold";
+    if(weather.main.temp>15 && weather.main.temp<=25) return "app lcold";
+    if(weather.main.temp>25 && weather.main.temp<=35) return "app medium";
     else return "app warm";
   }
 
+  const setTagColour = () =>{
+    if(weather.weather[0].main==="Clouds") return "type clouds";
+    if(weather.weather[0].main==="Mist") return "type mist";
+    if(weather.weather[0].main==="Haze") return "type haze";
+    if(weather.weather[0].main==="Smoke") return "type smoke";
+    if(weather.weather[0].main==="Clear") return "type clear";
+  }
+
   return (
-    <div className={setClassName()}>
+    <div className={setBG()}>
       <main>
         <div className="search-bar">
           <input className="search-box" type="text" placeholder="Search city ..."
           onChange={e=>setQuery(e.target.value)} value={query}
           onKeyPress={search}>
           </input>
-          <img className="search-btn" src="https://img.icons8.com/ios-filled/50/000000/search--v2.png" alt=""/>
+          <button type="submit" className="search-btn">
+            <img src="https://img.icons8.com/ios-filled/50/000000/search--v2.png" alt=""/>
+          </button>
         </div>
 
         {(typeof weather.main != "undefined")?(
@@ -61,9 +67,9 @@ function App() {
               <h2 className="location">{weather.name}, {weather.sys.country}</h2>
               <p className="date">{dateBuilder(new Date())}</p>
               <div className="temp">{weather.main.temp}°C</div>
-              <p className="type">{weather.weather[0].main}</p>
+              <p className={setTagColour()}>{weather.weather[0].main}</p>
               <div className="other-dets">
-                <h4>Other details :</h4>
+                <h4 style={{fontSize: "30px"}}>Other details :</h4>
                 <p className="others">Pressure: {weather.main.pressure}</p>
                 <p className="others">Humidity: {weather.main.humidity}</p>
                 <p className="others">Wind speed: {weather.wind.speed}</p>

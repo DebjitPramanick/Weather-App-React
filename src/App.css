@@ -19,24 +19,27 @@ main{
 .search-bar{
   max-width: 600px;
   margin: auto;
-  padding: 40px 0;
+  transform: translateY(50%);
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  background-color: rgb(199, 229, 255);
+  border-radius: 6px;
+  overflow: hidden;
 }
 
 .search-btn{
+  display: block;
+  border: 0;
+  outline: 0;
+  padding: 4px 22px;
   background-color: rgb(199, 229, 255);
-  width: 30px;
-  height: 30px;
   cursor: pointer;
-  padding: 16px 22px;
-  border-radius: 0 6px 6px 0;
 }
+.search-btn img{width: 30px; height: 30px;}
 .search-box{
   display: block;
   padding: 16px;
   font-size: 18px;
-  border-radius: 6px 0 0 6px;
   width: 80%;
   outline: 0;
   border: 0;
@@ -54,8 +57,9 @@ main{
   background: rgba(0, 0, 0, 0.404);
   color: white;
   text-align: center;
-  padding: 40px 0;
+  padding: 40px 0 2px 0;
   border-radius: 6px;
+  transform: translateY(10%);
 }
 
 .location{margin-bottom: 40px;}
@@ -63,16 +67,17 @@ main{
 .temp{
   display: inline-block;
   padding: 20px;
-  font-size: 60px;
+  font-size: 80px;
   font-weight: 800;
   border: 2px solid white;
   margin: 40px 0;
   border-radius: 6px;
+  box-shadow: 0 0 rgb(10, 3, 3) 40px;
 }
 .type{
   width: 100px;
   margin: auto;
-  background: rgb(206, 134, 0);
+  background: rgb(0, 185, 46);
   font-size: 16px;
   padding: 10px;
   border-radius: 40px;
@@ -88,14 +93,12 @@ main{
   border-radius: 6px;
   text-align: left;
 }
-.others{
-  margin-top: 18px;
-  font-weight: lighter;
-}
+.others{margin-top: 18px;font-weight: lighter;}
 
-.type.cold{background: rgb(0, 119, 255);}
-.type.lcold{background: rgb(0, 179, 119);}
-.type.medium{background: rgb(134, 32, 32);}
+.type.clouds{background: rgb(0, 119, 255);}
+.type.mist{background: rgb(0, 179, 119);}
+.type.smoke{background: rgb(82, 82, 82);}
+.type.haze{background: rgb(221, 136, 0);}
 
 
 .copyright{

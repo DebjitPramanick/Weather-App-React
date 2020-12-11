@@ -11,14 +11,6 @@ function App() {
   const [query,setQuery] = React.useState('');
   const [weather,setWeather] = React.useState('');
 
-  const search = evt =>{
-    if(evt.key === "Enter"){
-      fetch(`${api.url}weather?q=${query}&units=metric&APPID=${api.key}`)
-      .then(resp=>resp.json())
-      .then(result=>{setWeather(result);setQuery('');console.log(result)});
-    }
-  }
-
   const handleSearch = (e) =>{
     e.preventDefault();
     if(query){
@@ -48,6 +40,8 @@ function App() {
     else if(weather.main.temp>25 && weather.main.temp<=35) return "app medium";
     else return "app warm";
   }
+
+
 
 
   return (
@@ -96,8 +90,6 @@ function App() {
             
           </div>
         )}
-
-        <div className="copyright">&copy; Debjit Pramanick 2020, Weather App</div>
       </main>
     </div>
   )

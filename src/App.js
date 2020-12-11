@@ -65,9 +65,9 @@ function App() {
               <p className="type">{weather.weather[0].main}</p>
               <div className="other-dets">
                 <h4 style={{fontSize: "30px",fontWeight: "100",marginBottom: "30px"}}>Other details :</h4>
-                <p className="others">Pressure: {weather.main.pressure}</p>
-                <p className="others">Humidity: {weather.main.humidity}</p>
-                <p className="others">Wind speed: {weather.wind.speed}</p>
+                <p className="others">Pressure: {weather.main.pressure} hPa</p>
+                <p className="others">Humidity: {weather.main.humidity} %</p>
+                <p className="others">Wind speed: {weather.wind.speed} m/s</p>
               </div>
             </div>
           </div>
